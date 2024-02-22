@@ -17,13 +17,13 @@ object RegistrationUtil {
         if(username.isEmpty() || password.isEmpty()){
             return false
         }
-        if(existingUsers.contains(username)) {
+        if(username in existingUsers) {
             return false
         }
         if(password != confirmedPassword) {
             return false
         }
-        if(password.filter { "0123456789".contains(it) }.length < 2) {
+        if(password.count { it.isDigit() } < 2) {
             return false
         }
         return true
