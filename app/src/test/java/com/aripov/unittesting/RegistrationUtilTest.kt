@@ -42,23 +42,19 @@ class RegistrationUtilTest {
     }
     @Test
     fun `passwords do not match returns false`() {
-        val password = "abc123"
-        val confirmedPassword = "123abc"
         val result = RegistrationUtil.validRegistrationInput(
             "Hello",
-            password,
-            confirmedPassword
+            "abc123",
+            "123abc"
         )
         assertThat(result).isFalse()
     }
     @Test
     fun `passwords do not contain 2 digits return false returns false`() {
-        val password = "abc"
-        val confirmedPassword = "abc"
         val result = RegistrationUtil.validRegistrationInput(
             "Hello",
-            password,
-            confirmedPassword
+            "abc",
+            "abc"
         )
         assertThat(result).isFalse()
     }
