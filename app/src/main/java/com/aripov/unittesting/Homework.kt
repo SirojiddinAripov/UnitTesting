@@ -32,6 +32,6 @@ object Homework {
     fun checkBraces(string: String): Boolean {
         val left = string.count { it == '(' }
         val right = string.count { it == ')' }
-        return left == right && left != 0
+        return left == right && left != 0 && string.indexOf("(") < string.indexOf(")")
     }
 }

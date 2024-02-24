@@ -55,4 +55,14 @@ class HomeworkTest {
         val result = Homework.checkBraces("(a+b))")
         assertThat(result).isFalse()
     }
+    @Test
+    fun `incorrect order of parenthesis returns false`() {
+        val result = Homework.checkBraces(")(")
+        assertThat(result).isFalse()
+    }
+    @Test
+    fun `incorrect order of parenthesis with content returns false`() {
+        val result = Homework.checkBraces(")dslhg(")
+        assertThat(result).isFalse()
+    }
 }
